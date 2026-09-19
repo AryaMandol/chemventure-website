@@ -1,0 +1,36 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+*.swp
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Node tooling
+node_modules/
+
+# WordPress local/runtime files
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/ai1wm-backups/
+wp-content/backups/
+
+# Archives
+*.zip
+
+# Design review screenshots
+design-master/preview-*.png

@@ -41,3 +41,7 @@ Pass 4 notes:
 - Strengthened the Why Powder Coating section visually.
 - Replaced the colour catalogue CTA with finish-selection support messaging.
 - Reworked the enquiry-side support content.
+
+Pass 5 notes:
+- Constrained image height so image columns do not visually overpower shorter text blocks.
+- Redesigned Colours & Finishes section into a cleaner, more conventional professional layout.

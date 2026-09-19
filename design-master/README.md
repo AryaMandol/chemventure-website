@@ -49,3 +49,9 @@ Pass 5 notes:
 Pass 6 notes:
 - Forced desktop image columns to stretch to the full height of their paired text columns for cleaner alignment and symmetry.
 - Removed desktop image-height constraints that were causing visible blank gaps under media areas.
+
+Pass 7 notes:
+- Reworked desktop split-section media sizing to be genuinely content-driven.
+- The image no longer contributes its intrinsic/fixed height to the grid row.
+- About, Quality and Operations text content now determines section height, and the paired image fills that exact height.
+- Tablet/mobile media remains independently sized for safe responsive behaviour.

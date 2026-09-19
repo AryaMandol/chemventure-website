@@ -45,3 +45,7 @@ Pass 4 notes:
 Pass 5 notes:
 - Constrained image height so image columns do not visually overpower shorter text blocks.
 - Redesigned Colours & Finishes section into a cleaner, more conventional professional layout.
+
+Pass 6 notes:
+- Forced desktop image columns to stretch to the full height of their paired text columns for cleaner alignment and symmetry.
+- Removed desktop image-height constraints that were causing visible blank gaps under media areas.

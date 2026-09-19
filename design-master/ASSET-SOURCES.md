@@ -1,17 +1,17 @@
-# Stock Image Sources
+# Stock image references used in the CV-01 design master
 
-The v2 design master uses the following free stock references for prototype purposes.
+These are temporary free stock images used only as design placeholders. They should be uploaded to WordPress Media or replaced with ChemVenture's own photography during implementation.
 
-## Hero / Powder coating workshop
-Pexels - Industrial Powder Coating Process in Workshop
-https://www.pexels.com/photo/industrial-powder-coating-process-in-workshop-36184235/
+1. Hero - Pexels, "Industrial Powder Coating Process in Workshop"
+   https://www.pexels.com/photo/industrial-powder-coating-process-in-workshop-36184235/
 
-## About / Powder coating metal pipes
-Pexels - Industrial Powder Coating Process in Action
-https://www.pexels.com/photo/industrial-powder-coating-process-in-action-36215204/
+2. About - Pexels, "Industrial Powder Coating Process in Action"
+   https://www.pexels.com/photo/industrial-powder-coating-process-in-action-36215204/
 
-## Quality / Industrial laboratory equipment
-Pexels - Laboratory Equipment in Close Up
-https://www.pexels.com/photo/laboratory-equipment-in-close-up-11288389/
+3. Quality - Pexels, "Chemical Engineers Working in Laboratory"
+   https://www.pexels.com/photo/chemical-engineers-working-in-laboratory-3861442/
 
-Pexels pages identify these images as free to use. Before production, the chosen files should be downloaded and stored in the WordPress Media Library rather than hotlinked.
+4. Operational capability - Pexels, "Men Working in Factory Warehouse"
+   https://www.pexels.com/photo/men-working-in-factory-warehouse-4483772/
+
+Pexels pages identify these images as free to use. Verify final usage/licensing again before production launch and prefer client-owned photography where available.

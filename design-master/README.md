@@ -34,3 +34,24 @@ The following should become editable through WordPress administration in CV-02/C
 ## Prototype-only behaviour
 
 The enquiry form does not send data yet. Resource buttons do not download files yet. Those are intentionally deferred to CV-04.
+
+
+Pass 4 notes:
+- Removed numbered micro-sections in favour of cleaner professional content blocks.
+- Strengthened the Why Powder Coating section visually.
+- Replaced the colour catalogue CTA with finish-selection support messaging.
+- Reworked the enquiry-side support content.
+
+Pass 5 notes:
+- Constrained image height so image columns do not visually overpower shorter text blocks.
+- Redesigned Colours & Finishes section into a cleaner, more conventional professional layout.
+
+Pass 6 notes:
+- Forced desktop image columns to stretch to the full height of their paired text columns for cleaner alignment and symmetry.
+- Removed desktop image-height constraints that were causing visible blank gaps under media areas.
+
+Pass 7 notes:
+- Reworked desktop split-section media sizing to be genuinely content-driven.
+- The image no longer contributes its intrinsic/fixed height to the grid row.
+- About, Quality and Operations text content now determines section height, and the paired image fills that exact height.
+- Tablet/mobile media remains independently sized for safe responsive behaviour.

@@ -53,7 +53,7 @@
 
   document.querySelectorAll('[data-resource]').forEach((button) => {
     button.addEventListener('click', () => {
-      if (resourceStatus) resourceStatus.textContent = 'Prototype only. The final PDF will be linked from WordPress Media after client confirmation.';
+      if (resourceStatus) resourceStatus.textContent = 'Prototype only. Final downloadable resources and finish-support files will be linked from WordPress Media after client confirmation.';
     });
   });
 

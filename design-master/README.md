@@ -1,37 +1,36 @@
-# ChemVenture / Green Paints - CV-01 Design Master v2
+# CV-01 Pass 3 - Design refinement and interaction pass
 
-This is the revised single-page HTML design master for the ChemVenture / Green Paints website.
+This package replaces the current `design-master` files for the ChemVenture / Green Paints website prototype.
 
-## Design direction
+## What changed from the accepted v2 baseline
 
-The first concept has been replaced with a more conventional B2B industrial structure:
+- Added a compact B2B utility bar for brand context and resource access.
+- Tightened vertical spacing and alignment across sections.
+- Reworked the credibility band to use factual capability statements instead of number-led marketing blocks.
+- Improved product hierarchy and added a requirement-assistance strip.
+- Improved the finishes panel with visible finish labels.
+- Replaced the quality image reference with a relevant free laboratory stock image.
+- Reworked Operational Capability into a split image + structured capability list.
+- Strengthened enquiry form hierarchy, validation states and process cues.
+- Added active desktop navigation state.
+- Added keyboard-friendly mobile menu close on Escape.
+- Added subtle one-time reveal motion with reduced-motion support.
+- Preserved all content constraints from the supplied ChemVenture documents.
 
-1. Sticky corporate header
-2. Full-width industrial hero
-3. Compact proof / credibility band
-4. About + capability introduction
-5. Three-column product range
-6. Powder coating benefits
-7. Colours and finishes
-8. Quality and testing
-9. Operational capability
-10. Technical resources
-11. Enquiry and contact
-12. Corporate footer
+## WordPress mapping planned later
 
-The layout uses a consistent 1180px content container, tighter vertical spacing and aligned section edges.
+The following should become editable through WordPress administration in CV-02/CV-03:
 
-## Stock imagery
+- Hero image and hero copy
+- About image and copy
+- Product content
+- Finish descriptions/swatches
+- Quality image and testing list
+- Operations image and capability content
+- Downloadable resources
+- Contact details
+- Enquiry destination/settings
 
-The prototype uses free Pexels stock imagery through remote URLs. Each remote image includes a local fallback so the page remains usable if remote images are unavailable.
+## Prototype-only behaviour
 
-See `ASSET-SOURCES.md` for source details.
-
-For the WordPress build, download the selected stock images and upload them into the Media Library, then make hero/about/quality images editable from WP Admin.
-
-## Prototype limitations
-
-- Contact details are placeholders pending client confirmation.
-- Resource PDF buttons are visual only.
-- The enquiry form validates but does not send.
-- Final industry/application claims are not shown until ChemVenture confirms them.
+The enquiry form does not send data yet. Resource buttons do not download files yet. Those are intentionally deferred to CV-04.

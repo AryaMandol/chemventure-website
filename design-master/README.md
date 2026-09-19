@@ -34,3 +34,10 @@ The following should become editable through WordPress administration in CV-02/C
 ## Prototype-only behaviour
 
 The enquiry form does not send data yet. Resource buttons do not download files yet. Those are intentionally deferred to CV-04.
+
+
+Pass 4 notes:
+- Removed numbered micro-sections in favour of cleaner professional content blocks.
+- Strengthened the Why Powder Coating section visually.
+- Replaced the colour catalogue CTA with finish-selection support messaging.
+- Reworked the enquiry-side support content.

@@ -8,6 +8,11 @@
   const productSelect = document.querySelector('[data-product-select]');
   const resourceStatus = document.querySelector('[data-resource-status]');
   const submitButton = document.querySelector('[data-submit-button]');
+  const consentRoot = document.querySelector('[data-cookie-consent]');
+  const consentPanel = document.querySelector('[data-cookie-panel]');
+  const consentAccept = document.querySelector('[data-cookie-accept]');
+  const consentReject = document.querySelector('[data-cookie-reject]');
+  const consentSettings = [...document.querySelectorAll('[data-cookie-settings]')];
 
   window.dataLayer = window.dataLayer || [];
 
@@ -20,27 +25,112 @@
     });
   };
 
+
+  const consentStorageKey = 'chemventure_cookie_consent';
+  const consentVersion = String(config.consentVersion || '1');
+  let consentReturnFocus = null;
+  let gtmLoaded = false;
+
+  const readConsent = () => {
+    try {
+      const stored = JSON.parse(window.localStorage.getItem(consentStorageKey) || 'null');
+      if (!stored || stored.version !== consentVersion) return null;
+      if (!['analytics', 'necessary'].includes(stored.status)) return null;
+      return stored;
+    } catch (error) {
+      return null;
+    }
+  };
+
+  const saveConsent = (status) => {
+    try {
+      window.localStorage.setItem(consentStorageKey, JSON.stringify({
+        version: consentVersion,
+        status,
+        updatedAt: new Date().toISOString(),
+      }));
+    } catch (error) {
+      // If storage is blocked, the user's choice applies to the current page only.
+    }
+  };
+
+  const loadGtm = () => {
+    if (gtmLoaded || !config.trackingEnabled || !config.gtmId) return;
+    gtmLoaded = true;
+    window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(config.gtmId)}`;
+    script.dataset.cvGtm = 'true';
+    document.head.appendChild(script);
+  };
+
+  const showConsent = (returnFocus = null) => {
+    if (!consentRoot || !config.trackingEnabled) return;
+    consentReturnFocus = returnFocus;
+    consentRoot.hidden = false;
+    document.body.classList.add('cv-consent-open');
+    window.requestAnimationFrame(() => consentPanel?.focus());
+  };
+
+  const hideConsent = () => {
+    if (!consentRoot) return;
+    consentRoot.hidden = true;
+    document.body.classList.remove('cv-consent-open');
+    if (consentReturnFocus instanceof HTMLElement) consentReturnFocus.focus();
+    consentReturnFocus = null;
+  };
+
+  const applyConsent = (status, persist = true) => {
+    if (persist) saveConsent(status);
+    track('consent_update', { analytics_consent: status === 'analytics' ? 'granted' : 'denied' });
+    if (status === 'analytics') loadGtm();
+    hideConsent();
+  };
+
+  if (config.trackingEnabled) {
+    const storedConsent = readConsent();
+    if (storedConsent?.status === 'analytics') {
+      loadGtm();
+    } else if (!storedConsent) {
+      showConsent();
+    }
+
+    consentAccept?.addEventListener('click', () => applyConsent('analytics'));
+    consentReject?.addEventListener('click', () => applyConsent('necessary'));
+    consentSettings.forEach((button) => button.addEventListener('click', () => showConsent(button)));
+  }
+
   const updateHeader = () => {
     if (!header) return;
     header.classList.toggle('is-scrolled', window.scrollY > 8);
   };
 
-  const closeMenu = () => {
+  const closeMenu = (restoreFocus = false) => {
     if (!toggle || !menu) return;
     toggle.setAttribute('aria-expanded', 'false');
     menu.hidden = true;
+    document.body.classList.remove('cv-menu-open');
+    if (restoreFocus) toggle.focus();
   };
 
   if (toggle && menu) {
     toggle.addEventListener('click', () => {
       const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!isOpen));
-      menu.hidden = isOpen;
+      if (isOpen) {
+        closeMenu();
+        return;
+      }
+      toggle.setAttribute('aria-expanded', 'true');
+      menu.hidden = false;
+      document.body.classList.add('cv-menu-open');
+      window.requestAnimationFrame(() => menu.querySelector('a')?.focus());
     });
 
-    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => closeMenu()));
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeMenu();
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') closeMenu(true);
+      if (event.key === 'Escape' && consentRoot && !consentRoot.hidden) hideConsent();
     });
     window.addEventListener('resize', () => {
       if (window.innerWidth > 980) closeMenu();
@@ -283,7 +373,10 @@
       const hash = `#${visible.target.id}`;
       navLinks.forEach((link) => {
         const linkHash = new URL(link.href, window.location.href).hash;
-        link.classList.toggle('is-active', linkHash === hash);
+        const isActive = linkHash === hash;
+        link.classList.toggle('is-active', isActive);
+        if (isActive) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
       });
     }, { rootMargin: '-30% 0px -58% 0px', threshold: [0.01, 0.2, 0.5] });
     sections.forEach((section) => sectionObserver.observe(section));

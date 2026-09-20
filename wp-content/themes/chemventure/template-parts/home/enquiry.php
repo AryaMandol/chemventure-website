@@ -69,7 +69,7 @@ $factory  = chemventure_mod( 'factory_address', '' );
             <input type="hidden" name="referrer" value="">
 
             <button class="cv-button cv-button--primary cv-button--large" type="submit" data-submit-button>Get a Quote</button>
-            <p class="form-privacy">Your details are used only to respond to this enquiry. Privacy information will be finalized during CV-05.</p>
+            <p class="form-privacy">Your details are used only to respond to this enquiry.<?php if ( get_privacy_policy_url() ) : ?> <a href="<?php echo esc_url( get_privacy_policy_url() ); ?>">Read our Privacy Policy.</a><?php endif; ?></p>
             <p class="form-status" aria-live="polite" data-form-status></p>
             <noscript><p class="form-status is-error">JavaScript is required to submit this form online. Please use the contact details shown on this page.</p></noscript>
         </form>

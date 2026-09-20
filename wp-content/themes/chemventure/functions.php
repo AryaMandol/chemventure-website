@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'CHEMVENTURE_THEME_VERSION', '0.4.0' );
+define( 'CHEMVENTURE_THEME_VERSION', '0.5.0' );
 define( 'CHEMVENTURE_THEME_DIR', get_template_directory() );
 define( 'CHEMVENTURE_THEME_URI', get_template_directory_uri() );
 
@@ -19,3 +19,6 @@ require_once CHEMVENTURE_THEME_DIR . '/inc/helpers.php';
 require_once CHEMVENTURE_THEME_DIR . '/inc/customizer.php';
 require_once CHEMVENTURE_THEME_DIR . '/inc/leads.php';
 require_once CHEMVENTURE_THEME_DIR . '/inc/tracking.php';
+require_once CHEMVENTURE_THEME_DIR . '/inc/seo.php';
+require_once CHEMVENTURE_THEME_DIR . '/inc/privacy.php';
+require_once CHEMVENTURE_THEME_DIR . '/inc/hardening.php';

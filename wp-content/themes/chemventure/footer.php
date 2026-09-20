@@ -34,6 +34,14 @@
 
     <div class="cv-container cv-footer-bottom">
         <p>&copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> ChemVenture India Private Limited. All rights reserved.</p>
+        <div class="cv-footer-legal">
+            <?php if ( get_privacy_policy_url() ) : ?>
+                <a href="<?php echo esc_url( get_privacy_policy_url() ); ?>">Privacy Policy</a>
+            <?php endif; ?>
+            <?php if ( chemventure_tracking_enabled() ) : ?>
+                <button type="button" data-cookie-settings>Cookie settings</button>
+            <?php endif; ?>
+        </div>
     </div>
 </footer>
 

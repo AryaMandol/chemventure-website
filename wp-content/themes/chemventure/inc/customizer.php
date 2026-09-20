@@ -98,7 +98,7 @@ function chemventure_customize_register( $wp_customize ) {
         'chemventure_leads_tracking',
         array(
             'title'       => __( 'Leads & Tracking', 'chemventure' ),
-            'description' => __( 'Configure lead notification and the optional Google Tag Manager container. Tracking remains disabled until explicitly enabled.', 'chemventure' ),
+            'description' => __( 'Configure lead notification and the optional Google Tag Manager container. When enabled, GTM loads only after the visitor accepts analytics cookies.', 'chemventure' ),
             'panel'       => 'chemventure_homepage',
             'priority'    => 60,
         )
@@ -120,9 +120,60 @@ function chemventure_customize_register( $wp_customize ) {
         'tracking_enabled',
         array(
             'label'       => __( 'Enable Google Tag Manager', 'chemventure' ),
-            'description' => __( 'Leave disabled during local development. Enable only after the production container and privacy requirements are ready.', 'chemventure' ),
+            'description' => __( 'Leave disabled during local development. In production, GTM will load only after analytics consent is granted.', 'chemventure' ),
             'section'     => 'chemventure_leads_tracking',
             'type'        => 'checkbox',
+        )
+    );
+
+
+    $wp_customize->add_section(
+        'chemventure_seo_privacy',
+        array(
+            'title'       => __( 'SEO & Privacy', 'chemventure' ),
+            'description' => __( 'Manage homepage search metadata, social sharing and analytics consent settings.', 'chemventure' ),
+            'panel'       => 'chemventure_homepage',
+            'priority'    => 70,
+        )
+    );
+
+    chemventure_add_text_control(
+        $wp_customize,
+        'organization_name',
+        'chemventure_seo_privacy',
+        __( 'Organization legal name', 'chemventure' ),
+        'ChemVenture India Private Limited',
+        'sanitize_text_field'
+    );
+
+    chemventure_add_text_control(
+        $wp_customize,
+        'homepage_meta_description',
+        'chemventure_seo_privacy',
+        __( 'Homepage meta description', 'chemventure' ),
+        'Green Paints by ChemVenture India offers industrial powder coating solutions including epoxy, epoxy polyester hybrid and pure polyester systems.',
+        'sanitize_textarea_field',
+        'textarea'
+    );
+
+    $wp_customize->add_setting(
+        'social_share_image',
+        array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+            'transport'         => 'refresh',
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'social_share_image',
+            array(
+                'label'       => __( 'Social share image', 'chemventure' ),
+                'description' => __( 'Recommended: 1200 × 630 px. Used for Open Graph and social previews when no SEO plugin is active.', 'chemventure' ),
+                'section'     => 'chemventure_seo_privacy',
+            )
         )
     );
 }

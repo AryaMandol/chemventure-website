@@ -19,7 +19,7 @@ $fallback = CHEMVENTURE_THEME_URI . '/assets/images/powder-spray-green.jpg';
             </div>
         </div>
         <div class="operations-media" data-reveal>
-            <img src="<?php echo esc_url( $operations_image ); ?>" data-fallback="<?php echo esc_url( $fallback ); ?>" alt="Representative industrial operations" loading="lazy">
+            <img src="<?php echo esc_url( $operations_image ); ?>" data-fallback="<?php echo esc_url( $fallback ); ?>" alt="Representative industrial operations" loading="lazy" decoding="async">
             <div class="operations-caption">Representative industrial operations image</div>
         </div>
     </div>

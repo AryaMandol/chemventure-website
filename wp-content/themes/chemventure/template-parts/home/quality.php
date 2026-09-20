@@ -8,7 +8,7 @@ $fallback = CHEMVENTURE_THEME_URI . '/assets/images/powder-spray-yellow.png';
 <section class="home-section home-section-white" id="quality" data-section="quality">
     <div class="cv-container split-grid quality-grid">
         <div class="home-media-card quality-media" data-reveal>
-            <img src="<?php echo esc_url( $quality_image ); ?>" data-fallback="<?php echo esc_url( $fallback ); ?>" alt="Representative laboratory testing" loading="lazy">
+            <img src="<?php echo esc_url( $quality_image ); ?>" data-fallback="<?php echo esc_url( $fallback ); ?>" alt="Representative laboratory testing" loading="lazy" decoding="async">
             <div class="media-caption">Representative laboratory image</div>
         </div>
         <div class="content-block" data-reveal>

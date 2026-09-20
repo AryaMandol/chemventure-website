@@ -1,32 +1,31 @@
 # ChemVenture Green Paints Theme
 
-Custom lightweight WordPress theme for the ChemVenture / Green Paints website.
+Custom lightweight WordPress theme for ChemVenture India Private Limited and the Green Paints powder coating brand.
 
-## Current Stage
+## Theme Version
 
-**CV-03 - Complete homepage implementation**
+`0.5.0`
 
-The homepage now implements the approved CV-01 visual direction inside WordPress.
+## Implemented
 
-### Implemented
+- responsive single-page homepage
+- custom logo and native WordPress menus
+- hero, product, finish, quality, operations, resources and enquiry sections
+- content-driven desktop image height for split sections
+- Customizer-managed homepage copy, imagery, contact information and resources
+- native WordPress lead capture and lead administration
+- campaign attribution and CSV export
+- GTM-ready data-layer events
+- consent-gated GTM loading
+- front-page SEO metadata and social previews when no dedicated SEO plugin is active
+- Organization and WebSite JSON-LD schema
+- local/development `noindex` protection
+- privacy-policy integration
+- responsive and reduced-motion behaviour
+- progressive enhancement when JavaScript is unavailable
+- conservative front-end security headers
 
-- responsive hero and proof band
-- About / Green Paints section
-- powder-coating product range
-- Why Powder Coating section
-- Colours & Finishes section
-- Quality & Testing section
-- Operational Capability section
-- Technical Resources section
-- enquiry form UI
-- responsive navigation and footer
-- active-section navigation state
-- product-to-enquiry selection behaviour
-- reduced-motion-safe reveal behaviour
-- content-driven desktop media height for split sections
-- native WordPress Customizer controls for primary homepage imagery, key copy, contact details and resource URLs
-
-## Admin Editing
+## Homepage Administration
 
 Go to:
 
@@ -34,17 +33,33 @@ Go to:
 Appearance → Customize → ChemVenture Homepage
 ```
 
-The Customizer provides sections for:
+Available sections:
 
 - Hero Content
 - Homepage Images
 - About Content
 - Contact Details
 - Technical Resources
+- Leads & Tracking
+- SEO & Privacy
 
-## Not Included Yet
+## Leads
 
-CV-04 will connect the enquiry form to real lead handling and add analytics / Meta tracking.
+Stored enquiries are available at:
+
+```text
+WP Admin → Leads
+```
+
+## Privacy
+
+Set the WordPress Privacy Policy page under:
+
+```text
+Settings → Privacy
+```
+
+When GTM is configured and enabled, the theme displays a binary consent control and does not load GTM until analytics/measurement consent is accepted.
 
 ## Requirements
 
@@ -53,9 +68,4 @@ CV-04 will connect the enquiry form to real lead handling and add analytics / Me
 
 ## Design Principle
 
-The approved CV-01 design master remains the visual reference. WordPress implementation should preserve its professional B2B industrial layout and responsive behaviour.
-
-
-## CV-04 Lead Handling
-
-The theme includes a native lead-capture endpoint, private `cv_lead` admin records, lead notification email, CSV export, UTM attribution and GTM-ready data-layer events. See the project-level `docs/CV-04-LEADS-TRACKING.md`.
+The approved CV-01 design master remains the visual reference. Production changes should preserve its professional B2B industrial presentation unless explicitly approved.

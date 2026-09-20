@@ -9,8 +9,8 @@ The website is being developed as a lightweight custom WordPress implementation.
 | Stage | Scope | Status |
 | --- | --- | --- |
 | CV-01 | Responsive design master | Complete |
-| CV-02 | WordPress + Git foundation | In progress |
-| CV-03 | Complete homepage implementation | Planned |
+| CV-02 | WordPress + Git foundation | Complete |
+| CV-03 | Complete homepage implementation | In progress |
 | CV-04 | Lead generation + tracking | Planned |
 | CV-05 | Polish, mobile, SEO + hardening | Planned |
 | CV-06 | Production deployment + verification | Planned |
@@ -87,7 +87,7 @@ See [`docs/CV-02-LOCAL-SETUP.md`](docs/CV-02-LOCAL-SETUP.md) for the exact setup
 
 ## Content and Assets
 
-Temporary stock photography may be used during development. Final images, downloadable resources, contact information and campaign content will be made editable through WordPress administration in the relevant implementation stages.
+Temporary stock photography may be used during development. CV-03 exposes the homepage hero/process/laboratory/operations images, key hero/about copy, contact information and technical-resource URLs through WordPress Customizer controls. Additional operational functionality is added in later stages.
 
 Client-supplied factual content remains the source for company, product, testing and operational claims.
 
@@ -99,3 +99,18 @@ Client-supplied factual content remains the source for company, product, testing
 - Test desktop and mobile before merging a stage.
 - Keep implementation aligned with the approved design master.
 - Update this README whenever the project stage or setup materially changes.
+
+
+## Homepage Administration
+
+The CV-03 homepage uses native WordPress Customizer controls for the items most likely to change before launch.
+
+Go to:
+
+```text
+Appearance → Customize → ChemVenture Homepage
+```
+
+The administrator can update hero copy, key about copy, hero/about/quality/operations images, contact details and technical-resource links without changing theme code.
+
+See [`docs/CV-03-HOMEPAGE.md`](docs/CV-03-HOMEPAGE.md) for the implementation and QA notes.

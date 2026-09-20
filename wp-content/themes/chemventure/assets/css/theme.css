@@ -518,3 +518,64 @@ textarea {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* CV-03 shell refinements */
+.cv-button--large {
+  min-height: 50px;
+  padding-inline: 26px;
+}
+
+.cv-utility-bar__inner {
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.cv-utility-links {
+  display: flex;
+  gap: 20px;
+}
+
+.cv-utility-links a:hover,
+.cv-utility-links a:focus-visible {
+  color: #fff;
+}
+
+.cv-header-contact {
+  color: #344238;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.cv-header-contact:hover,
+.cv-header-contact:focus-visible {
+  color: var(--cv-green-800);
+}
+
+.cv-nav__list a {
+  position: relative;
+  display: inline-flex;
+  min-height: var(--cv-header-height);
+  align-items: center;
+}
+
+.cv-nav__list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  height: 3px;
+  background: var(--cv-green-700);
+  transition: right 180ms ease;
+}
+
+.cv-nav__list a:hover::after,
+.cv-nav__list a.is-active::after {
+  right: 0;
+}
+
+@media (max-width: 980px) {
+  .cv-header-contact {
+    display: none;
+  }
+}

@@ -1,57 +1,51 @@
-# CV-01 Pass 3 - Design refinement and interaction pass
+# CV-01 Design Master
 
-This package replaces the current `design-master` files for the ChemVenture / Green Paints website prototype.
+This directory contains the approved responsive HTML design reference for the ChemVenture / Green Paints website.
 
-## What changed from the accepted v2 baseline
+## Status
 
-- Added a compact B2B utility bar for brand context and resource access.
-- Tightened vertical spacing and alignment across sections.
-- Reworked the credibility band to use factual capability statements instead of number-led marketing blocks.
-- Improved product hierarchy and added a requirement-assistance strip.
-- Improved the finishes panel with visible finish labels.
-- Replaced the quality image reference with a relevant free laboratory stock image.
-- Reworked Operational Capability into a split image + structured capability list.
-- Strengthened enquiry form hierarchy, validation states and process cues.
-- Added active desktop navigation state.
-- Added keyboard-friendly mobile menu close on Escape.
-- Added subtle one-time reveal motion with reduced-motion support.
-- Preserved all content constraints from the supplied ChemVenture documents.
+**CV-01: Complete**
 
-## WordPress mapping planned later
+The design master is now frozen as the visual reference for WordPress implementation. Future implementation work should preserve its hierarchy, alignment, responsive behaviour and overall visual language unless a later review explicitly approves a design change.
 
-The following should become editable through WordPress administration in CV-02/CV-03:
+## What the Design Master Covers
 
-- Hero image and hero copy
-- About image and copy
-- Product content
-- Finish descriptions/swatches
-- Quality image and testing list
-- Operations image and capability content
-- Downloadable resources
-- Contact details
-- Enquiry destination/settings
+- utility bar and primary navigation
+- industrial hero section
+- company credibility strip
+- About / Green Paints introduction
+- powder coating product range
+- Why Powder Coating benefits
+- Colours & Finishes presentation
+- Quality & Testing
+- Operational Capability
+- Technical Resources
+- enquiry form UI
+- footer
+- responsive desktop, tablet and mobile behaviour
 
-## Prototype-only behaviour
+## Key Decisions
 
-The enquiry form does not send data yet. Resource buttons do not download files yet. Those are intentionally deferred to CV-04.
+- Professional B2B industrial presentation rather than an experimental marketing layout.
+- Consistent content alignment and controlled vertical spacing.
+- Images in desktop split sections follow the height of their paired text content.
+- No page-builder-specific design assumptions.
+- Temporary photography can later be replaced through WordPress administration.
+- Product, capability and testing claims remain grounded in client-supplied material.
 
+## Prototype Behaviour
 
-Pass 4 notes:
-- Removed numbered micro-sections in favour of cleaner professional content blocks.
-- Strengthened the Why Powder Coating section visually.
-- Replaced the colour catalogue CTA with finish-selection support messaging.
-- Reworked the enquiry-side support content.
+The HTML design master contains demonstration interactions only.
 
-Pass 5 notes:
-- Constrained image height so image columns do not visually overpower shorter text blocks.
-- Redesigned Colours & Finishes section into a cleaner, more conventional professional layout.
+The following are intentionally deferred to later WordPress stages:
 
-Pass 6 notes:
-- Forced desktop image columns to stretch to the full height of their paired text columns for cleaner alignment and symmetry.
-- Removed desktop image-height constraints that were causing visible blank gaps under media areas.
+- live enquiry delivery
+- WhatsApp integration
+- downloadable resources
+- CMS-managed content and images
+- analytics and advertising pixels
+- campaign attribution
 
-Pass 7 notes:
-- Reworked desktop split-section media sizing to be genuinely content-driven.
-- The image no longer contributes its intrinsic/fixed height to the grid row.
-- About, Quality and Operations text content now determines section height, and the paired image fills that exact height.
-- Tablet/mobile media remains independently sized for safe responsive behaviour.
+## WordPress Mapping
+
+CV-03 will convert the approved design into the custom `chemventure` theme. Content that needs regular client updates will be exposed through WordPress administration without introducing a visual page builder.

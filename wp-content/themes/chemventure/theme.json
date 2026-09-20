@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "1200px",
+      "wideSize": "1400px"
+    },
+    "color": {
+      "custom": false,
+      "palette": [
+        { "slug": "green-950", "name": "Deep Green", "color": "#123b22" },
+        { "slug": "green-800", "name": "Brand Green", "color": "#2f6338" },
+        { "slug": "green-100", "name": "Soft Green", "color": "#eaf1eb" },
+        { "slug": "ink", "name": "Graphite", "color": "#1d2420" },
+        { "slug": "surface", "name": "Surface", "color": "#f4f5f2" },
+        { "slug": "warm", "name": "Warm Accent", "color": "#d3913d" },
+        { "slug": "white", "name": "White", "color": "#ffffff" }
+      ]
+    },
+    "spacing": {
+      "units": ["px", "rem", "%", "vw", "vh"]
+    },
+    "typography": {
+      "fluid": true,
+      "fontFamilies": [
+        {
+          "fontFamily": "\"Segoe UI\", system-ui, -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif",
+          "name": "System Sans",
+          "slug": "system-sans"
+        }
+      ],
+      "fontSizes": [
+        { "slug": "small", "size": "0.875rem", "name": "Small" },
+        { "slug": "medium", "size": "1rem", "name": "Medium" },
+        { "slug": "large", "size": "1.25rem", "name": "Large" },
+        { "slug": "x-large", "size": "2.25rem", "name": "Extra Large" }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "#ffffff",
+      "text": "#1d2420"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--system-sans)",
+      "lineHeight": "1.6"
+    }
+  }
+}

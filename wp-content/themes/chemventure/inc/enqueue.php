@@ -50,6 +50,9 @@ function chemventure_enqueue_assets() {
             'leadAction'       => 'chemventure_submit_lead',
             'leadNonce'        => wp_create_nonce( 'chemventure_submit_lead' ),
             'trackingEnabled'  => chemventure_tracking_enabled(),
+            'gtmId'            => chemventure_gtm_id(),
+            'consentVersion'   => '1',
+            'privacyPolicyUrl' => get_privacy_policy_url(),
         )
     );
 }

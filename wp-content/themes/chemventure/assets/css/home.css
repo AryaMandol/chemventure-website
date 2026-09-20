@@ -197,8 +197,9 @@
 .form-status.is-error { color: #8b362f; }
 
 /* Reveal */
-[data-reveal] { opacity: 0; transform: translateY(12px); transition: opacity .45s ease, transform .45s ease; }
-[data-reveal].is-visible { opacity: 1; transform: none; }
+html.js [data-reveal] { opacity: 0; transform: translateY(12px); transition: opacity .45s ease, transform .45s ease; }
+html.js [data-reveal].is-visible,
+html.no-js [data-reveal] { opacity: 1; transform: none; }
 
 /* Desktop content-driven media height */
 @media (min-width: 1021px) {
@@ -310,3 +311,29 @@
 .form-status.is-success { color: var(--home-green-800); font-weight: 650; }
 .enquiry-form button[disabled] { cursor: wait; opacity: .72; }
 .enquiry-form button.is-loading { transform: none; }
+
+
+/* CV-05 final polish */
+.form-privacy a {
+  color: var(--home-green-800);
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 420px) {
+  .product-topline {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .product-chip {
+    text-align: left;
+  }
+
+  .hero-actions,
+  .hero-actions .cv-button {
+    width: 100%;
+    max-width: none;
+  }
+}

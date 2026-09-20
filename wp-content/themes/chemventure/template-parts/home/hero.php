@@ -7,7 +7,7 @@ $fallback = CHEMVENTURE_THEME_URI . '/assets/images/powder-spray-yellow.png';
 ?>
 <section class="hero" id="top" data-section="top">
     <div class="hero-media" aria-hidden="true">
-        <img src="<?php echo esc_url( $hero_image ); ?>" data-fallback="<?php echo esc_url( $fallback ); ?>" alt="">
+        <img src="<?php echo esc_url( $hero_image ); ?>" data-fallback="<?php echo esc_url( $fallback ); ?>" alt="" loading="eager" fetchpriority="high" decoding="async">
     </div>
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="cv-container hero-content">

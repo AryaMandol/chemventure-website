@@ -67,14 +67,15 @@ function chemventure_customize_register( $wp_customize ) {
     $wp_customize->add_section(
         'chemventure_contact',
         array(
-            'title'    => __( 'Contact Details', 'chemventure' ),
-            'panel'    => 'chemventure_homepage',
-            'priority' => 40,
+            'title'       => __( 'Contact Details', 'chemventure' ),
+            'description' => __( 'Update the staging phone, WhatsApp, email and final client addresses here before sharing or launch.', 'chemventure' ),
+            'panel'       => 'chemventure_homepage',
+            'priority'    => 40,
         )
     );
 
     chemventure_add_text_control( $wp_customize, 'contact_phone', 'chemventure_contact', __( 'Phone', 'chemventure' ), '', 'sanitize_text_field' );
-    chemventure_add_text_control( $wp_customize, 'contact_whatsapp', 'chemventure_contact', __( 'WhatsApp number', 'chemventure' ), '', 'sanitize_text_field' );
+    chemventure_add_text_control( $wp_customize, 'contact_whatsapp', 'chemventure_contact', __( 'WhatsApp number', 'chemventure' ), '9903645467', 'sanitize_text_field' );
     chemventure_add_text_control( $wp_customize, 'contact_email', 'chemventure_contact', __( 'Sales email', 'chemventure' ), '', 'sanitize_email', 'email' );
     chemventure_add_text_control( $wp_customize, 'corporate_office', 'chemventure_contact', __( 'Corporate office', 'chemventure' ), '', 'sanitize_textarea_field', 'textarea' );
     chemventure_add_text_control( $wp_customize, 'factory_address', 'chemventure_contact', __( 'Factory', 'chemventure' ), '', 'sanitize_textarea_field', 'textarea' );

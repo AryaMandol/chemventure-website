@@ -17,6 +17,7 @@ $fallback = CHEMVENTURE_THEME_URI . '/assets/images/powder-spray-yellow.png';
             <p class="hero-lead"><?php echo esc_html( chemventure_mod( 'hero_lead', 'Epoxy, epoxy polyester hybrid and pure polyester powder coating solutions for consistent finish, protection and dependable application.' ) ); ?></p>
             <div class="hero-actions">
                 <a class="cv-button cv-button--primary cv-button--large" href="#enquiry">Get a Quote</a>
+                <a class="cv-button cv-button--whatsapp cv-button--large" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I am interested in Green Paints powder coating solutions. Please help me with my requirement.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="hero">WhatsApp</a>
                 <a class="cv-button cv-button--outline cv-button--large" href="#products">Explore Products</a>
             </div>
             <div class="hero-meta" aria-label="Green Paints highlights">

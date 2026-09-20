@@ -127,3 +127,8 @@ See [`docs/CV-05-POLISH-SEO-HARDENING.md`](docs/CV-05-POLISH-SEO-HARDENING.md) a
 - Do not place personally identifiable form data in analytics events.
 - GTM must remain blocked until the visitor accepts optional analytics/measurement cookies.
 - Update this README when the project stage or setup materially changes.
+
+
+## Staging approval preparation
+
+Before production, the current website can be shared with the client using Local Live Links. The staging default WhatsApp number is `9903645467`; update it from **Appearance → Customize → ChemVenture Homepage → Contact Details → WhatsApp number** before sharing the approval link. Privacy and Cookie Policy pages should be published for review.

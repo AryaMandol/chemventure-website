@@ -1,6 +1,6 @@
 <?php
 $phone    = chemventure_mod( 'contact_phone', '' );
-$whatsapp = chemventure_mod( 'contact_whatsapp', '' );
+$whatsapp = chemventure_whatsapp_number();
 $email    = chemventure_mod( 'contact_email', '' );
 $office   = chemventure_mod( 'corporate_office', '' );
 $factory  = chemventure_mod( 'factory_address', '' );
@@ -17,7 +17,7 @@ $factory  = chemventure_mod( 'factory_address', '' );
                 <?php if ( $phone || $whatsapp || $email || $office || $factory ) : ?>
                     <div class="contact-details">
                         <?php if ( $phone ) : ?><p><strong>Phone:</strong> <a href="<?php echo esc_url( chemventure_phone_href( $phone ) ); ?>" data-cv-event="phone_click" data-cv-location="contact"><?php echo esc_html( $phone ); ?></a></p><?php endif; ?>
-                        <?php if ( $whatsapp ) : ?><p><strong>WhatsApp:</strong> <a href="<?php echo esc_url( chemventure_whatsapp_href( $whatsapp ) ); ?>" target="_blank" data-cv-event="whatsapp_click" data-cv-location="contact" rel="noopener"><?php echo esc_html( $whatsapp ); ?></a></p><?php endif; ?>
+                        <?php if ( $whatsapp ) : ?><p><strong>WhatsApp:</strong> <a href="<?php echo esc_url( chemventure_whatsapp_href( $whatsapp, 'Hi, I would like to discuss a powder coating requirement with Green Paints.' ) ); ?>" target="_blank" data-cv-event="whatsapp_click" data-cv-location="contact" rel="noopener"><?php echo esc_html( $whatsapp ); ?></a></p><?php endif; ?>
                         <?php if ( $email ) : ?><p><strong>Email:</strong> <a href="mailto:<?php echo esc_attr( antispambot( $email ) ); ?>" data-cv-event="email_click" data-cv-location="contact"><?php echo esc_html( antispambot( $email ) ); ?></a></p><?php endif; ?>
                         <?php if ( $office ) : ?><p><strong>Office:</strong> <?php echo esc_html( $office ); ?></p><?php endif; ?>
                         <?php if ( $factory ) : ?><p><strong>Factory:</strong> <?php echo esc_html( $factory ); ?></p><?php endif; ?>
@@ -69,7 +69,7 @@ $factory  = chemventure_mod( 'factory_address', '' );
             <input type="hidden" name="referrer" value="">
 
             <button class="cv-button cv-button--primary cv-button--large" type="submit" data-submit-button>Get a Quote</button>
-            <p class="form-privacy">Your details are used only to respond to this enquiry.<?php if ( get_privacy_policy_url() ) : ?> <a href="<?php echo esc_url( get_privacy_policy_url() ); ?>">Read our Privacy Policy.</a><?php endif; ?></p>
+            <p class="form-privacy">Your details are used only to respond to this enquiry.<?php if ( chemventure_privacy_policy_url() ) : ?> <a href="<?php echo esc_url( chemventure_privacy_policy_url() ); ?>">Read our Privacy Policy.</a><?php endif; ?></p>
             <p class="form-status" aria-live="polite" data-form-status></p>
             <noscript><p class="form-status is-error">JavaScript is required to submit this form online. Please use the contact details shown on this page.</p></noscript>
         </form>

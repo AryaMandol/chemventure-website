@@ -4,7 +4,7 @@ Custom lightweight WordPress theme for ChemVenture India Private Limited and the
 
 ## Theme Version
 
-`0.5.0`
+`0.5.2`
 
 ## Implemented
 
@@ -73,4 +73,4 @@ The approved CV-01 design master remains the visual reference. Production change
 
 ## Legal policies
 
-Theme version 0.5.1 adds customized Privacy Policy and Cookie Policy shortcodes, footer links, and an updated consent banner. Review and publish the policy pages before production launch.
+Theme version 0.5.2 adds staging-approval fixes, a reliable Privacy Policy footer fallback, section-specific WhatsApp lead capture, and additional lightweight hardening. The WhatsApp number is managed from Appearance → Customize → ChemVenture Homepage → Contact Details.

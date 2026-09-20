@@ -337,3 +337,15 @@ html.no-js [data-reveal] { opacity: 1; transform: none; }
     max-width: none;
   }
 }
+
+
+/* CV-05C WhatsApp lead-capture actions */
+.product-card-actions { margin-top: auto; padding-top: 13px; border-top: 1px solid var(--home-line); display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+.product-card-actions .card-link { margin-top: 0; padding-top: 0; border-top: 0; }
+.product-whatsapp { flex: 0 0 auto; color: #2f7a49; font-size: 13px; font-weight: 750; }
+.product-whatsapp:hover { text-decoration: underline; text-underline-offset: 3px; }
+.finish-support-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+@media (max-width: 560px) {
+  .product-card-actions { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .finish-support-actions { flex-direction: column; align-items: stretch; }
+}

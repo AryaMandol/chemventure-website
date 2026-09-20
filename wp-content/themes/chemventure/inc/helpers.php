@@ -71,11 +71,62 @@ function chemventure_phone_href( $phone ) {
 }
 
 /**
- * Build a WhatsApp URL from an arbitrary number string.
+ * Return the active WhatsApp number.
+ *
+ * The staging default is intentionally centralized here so it can be replaced
+ * from the WordPress Customizer without changing templates.
  */
-function chemventure_whatsapp_href( $number ) {
-    $digits = preg_replace( '/\D+/', '', (string) $number );
-    return $digits ? 'https://wa.me/' . $digits : home_url( '/#enquiry' );
+function chemventure_whatsapp_number() {
+    $number = chemventure_mod( 'contact_whatsapp', '9903645467' );
+    return $number ? $number : '9903645467';
+}
+
+/**
+ * Normalize an Indian WhatsApp number for wa.me links.
+ */
+function chemventure_whatsapp_digits( $number = '' ) {
+    $digits = preg_replace( '/\D+/', '', (string) ( $number ?: chemventure_whatsapp_number() ) );
+
+    if ( 10 === strlen( $digits ) ) {
+        $digits = '91' . $digits;
+    }
+
+    return $digits;
+}
+
+/**
+ * Build a WhatsApp URL with an optional pre-filled message.
+ */
+function chemventure_whatsapp_href( $number = '', $message = '' ) {
+    $digits = chemventure_whatsapp_digits( $number );
+    if ( ! $digits ) {
+        return home_url( '/#enquiry' );
+    }
+
+    $url = 'https://wa.me/' . $digits;
+    if ( $message ) {
+        $url .= '?text=' . rawurlencode( $message );
+    }
+
+    return $url;
+}
+
+/**
+ * Resolve the public Privacy Policy URL even when WordPress Privacy settings
+ * have not yet been assigned, provided a published privacy-policy page exists.
+ */
+function chemventure_privacy_policy_url() {
+    $url = get_privacy_policy_url();
+    if ( $url ) {
+        return $url;
+    }
+
+    $page = get_page_by_path( 'privacy-policy', OBJECT, 'page' );
+    if ( $page instanceof WP_Post && 'publish' === $page->post_status ) {
+        return get_permalink( $page );
+    }
+
+    return '';
 }
 
 /**

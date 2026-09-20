@@ -24,6 +24,23 @@ function chemventure_privacy_contact_email() {
     return sanitize_email( chemventure_mod( 'contact_email', '' ) );
 }
 
+
+/**
+ * Locate the Privacy Policy page.
+ */
+function chemventure_privacy_policy_page() {
+    $assigned_id = absint( get_option( 'wp_page_for_privacy_policy', 0 ) );
+    if ( $assigned_id ) {
+        $page = get_post( $assigned_id );
+        if ( $page instanceof WP_Post && 'page' === $page->post_type && 'trash' !== $page->post_status ) {
+            return $page;
+        }
+    }
+
+    $page = get_page_by_path( 'privacy-policy', OBJECT, 'page' );
+    return $page instanceof WP_Post ? $page : null;
+}
+
 /**
  * Locate the cookie-policy page.
  */
@@ -237,7 +254,7 @@ add_shortcode( 'chemventure_privacy_policy', 'chemventure_privacy_policy_shortco
  * Customized Cookie Policy.
  */
 function chemventure_cookie_policy_shortcode() {
-    $privacy_url = get_privacy_policy_url();
+    $privacy_url = chemventure_privacy_policy_url();
     ob_start();
     ?>
     <div class="cv-legal-policy">

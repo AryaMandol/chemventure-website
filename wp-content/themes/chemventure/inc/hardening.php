@@ -67,3 +67,54 @@ function chemventure_resource_hints( $urls, $relation_type ) {
     return $urls;
 }
 add_filter( 'wp_resource_hints', 'chemventure_resource_hints', 10, 2 );
+
+
+/**
+ * Additional staging/production-safe WordPress hardening for this brochure site.
+ */
+if ( ! defined( 'DISALLOW_FILE_EDIT' ) ) {
+    define( 'DISALLOW_FILE_EDIT', true );
+}
+
+add_filter( 'xmlrpc_enabled', '__return_false' );
+add_filter( 'pings_open', '__return_false', 20, 2 );
+
+remove_action( 'wp_head', 'rsd_link' );
+remove_action( 'wp_head', 'wlwmanifest_link' );
+remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+remove_action( 'template_redirect', 'wp_shortlink_header', 11 );
+
+/**
+ * Do not expose public WordPress user-directory REST endpoints to anonymous visitors.
+ */
+function chemventure_limit_public_user_rest_endpoints( $endpoints ) {
+    if ( is_user_logged_in() ) {
+        return $endpoints;
+    }
+
+    foreach ( array_keys( $endpoints ) as $route ) {
+        if ( str_starts_with( $route, '/wp/v2/users' ) ) {
+            unset( $endpoints[ $route ] );
+        }
+    }
+
+    return $endpoints;
+}
+add_filter( 'rest_endpoints', 'chemventure_limit_public_user_rest_endpoints' );
+
+/**
+ * Avoid revealing whether a username exists on failed login attempts.
+ */
+function chemventure_generic_login_error() {
+    return __( 'Login failed. Please check your credentials and try again.', 'chemventure' );
+}
+add_filter( 'login_errors', 'chemventure_generic_login_error' );
+
+/**
+ * Remove legacy emoji assets on the public site. Modern browsers render emoji natively.
+ */
+function chemventure_disable_frontend_emoji_assets() {
+    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+    remove_action( 'wp_print_styles', 'print_emoji_styles' );
+}
+add_action( 'init', 'chemventure_disable_frontend_emoji_assets' );

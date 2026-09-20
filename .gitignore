@@ -1,4 +1,4 @@
-# OS
+# Operating system
 .DS_Store
 Thumbs.db
 desktop.ini
@@ -6,31 +6,45 @@ desktop.ini
 # Editors
 .vscode/
 .idea/
+*.swp
 
 # Temporary files
 *.tmp
 *.log
 *.bak
-*.swp
 
-# Environment
+# Environment and secrets
 .env
 .env.*
 !.env.example
-
-# Node tooling
-node_modules/
-
-# WordPress local/runtime files
 wp-config.php
+
+# Archives and exports
+*.zip
+*.sql
+*.sql.gz
+
+# Local runtime folders
+local-site/
+.local/
+
+# WordPress runtime content
 wp-content/uploads/
 wp-content/cache/
 wp-content/upgrade/
+wp-content/languages/
 wp-content/ai1wm-backups/
 wp-content/backups/
+wp-content/wflogs/
 
-# Archives
-*.zip
+# Third-party plugins are installed in Local/production, not committed here
+wp-content/plugins/
+
+# Ignore all themes except the project theme
+wp-content/themes/*
+!wp-content/themes/chemventure/
+!wp-content/themes/chemventure/**
 
 # Design review screenshots
+# Keep the approved HTML/CSS/JS source, but not generated preview captures.
 design-master/preview-*.png

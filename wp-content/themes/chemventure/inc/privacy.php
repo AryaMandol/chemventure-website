@@ -21,7 +21,7 @@ function chemventure_cookie_consent_ui() {
         return;
     }
 
-    $privacy_url = get_privacy_policy_url();
+    $privacy_url = chemventure_privacy_policy_url();
     $cookie_url  = function_exists( 'chemventure_cookie_policy_url' ) ? chemventure_cookie_policy_url() : '';
     ?>
     <div class="cv-cookie-consent" data-cookie-consent hidden>

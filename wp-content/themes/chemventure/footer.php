@@ -28,15 +28,18 @@
 
         <div class="cv-footer-cta">
             <p>Have a coating requirement?</p>
-            <a class="cv-button cv-button--outline" href="<?php echo esc_url( home_url( '/#enquiry' ) ); ?>">Get a Quote</a>
+            <div class="cv-footer-cta__actions">
+                <a class="cv-button cv-button--outline" href="<?php echo esc_url( home_url( '/#enquiry' ) ); ?>">Get a Quote</a>
+                <a class="cv-button cv-button--whatsapp" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I would like to discuss a powder coating requirement with Green Paints.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="footer">WhatsApp</a>
+            </div>
         </div>
     </div>
 
     <div class="cv-container cv-footer-bottom">
         <p>&copy; <?php echo esc_html( wp_date( 'Y' ) ); ?> ChemVenture India Private Limited. All rights reserved.</p>
         <div class="cv-footer-legal">
-            <?php if ( get_privacy_policy_url() ) : ?>
-                <a href="<?php echo esc_url( get_privacy_policy_url() ); ?>">Privacy Policy</a>
+            <?php if ( chemventure_privacy_policy_url() ) : ?>
+                <a href="<?php echo esc_url( chemventure_privacy_policy_url() ); ?>">Privacy Policy</a>
             <?php endif; ?>
             <?php if ( function_exists( 'chemventure_cookie_policy_url' ) && chemventure_cookie_policy_url() ) : ?>
                 <a href="<?php echo esc_url( chemventure_cookie_policy_url() ); ?>">Cookie Policy</a>

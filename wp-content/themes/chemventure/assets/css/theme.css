@@ -877,3 +877,14 @@ html.no-js .cv-menu-toggle {
     gap: 7px;
   }
 }
+
+
+/* CV-05C staging CTA refinements */
+.cv-button--whatsapp { border-color: #2f7a49; background: #2f7a49; color: #fff; }
+.cv-button--whatsapp:hover { border-color: #245f39; background: #245f39; color: #fff; }
+.cv-footer-cta__actions, .cv-mobile-menu__actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.cv-mobile-menu__actions { margin-top: 10px; }
+@media (max-width: 780px) {
+  .cv-header-whatsapp { display: none; }
+  .cv-footer-cta__actions { justify-content: flex-start; }
+}

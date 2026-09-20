@@ -40,7 +40,7 @@ function chemventure_enqueue_assets() {
         CHEMVENTURE_THEME_VERSION,
         true
     );
-
+    wp_script_add_data( 'chemventure-theme', 'strategy', 'defer' );
 
     wp_localize_script(
         'chemventure-theme',
@@ -52,7 +52,7 @@ function chemventure_enqueue_assets() {
             'trackingEnabled'  => chemventure_tracking_enabled(),
             'gtmId'            => chemventure_gtm_id(),
             'consentVersion'   => '2',
-            'privacyPolicyUrl' => get_privacy_policy_url(),
+            'privacyPolicyUrl' => chemventure_privacy_policy_url(),
         )
     );
 }

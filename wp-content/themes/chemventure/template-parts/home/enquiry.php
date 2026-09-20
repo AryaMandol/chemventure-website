@@ -68,7 +68,10 @@ $factory  = chemventure_mod( 'factory_address', '' );
             <input type="hidden" name="landing_url" value="">
             <input type="hidden" name="referrer" value="">
 
-            <button class="cv-button cv-button--primary cv-button--large" type="submit" data-submit-button>Get a Quote</button>
+            <div class="form-submit-actions">
+                <button class="cv-button cv-button--primary cv-button--large" type="submit" data-submit-button>Get a Quote</button>
+                <a class="cv-button cv-button--whatsapp cv-button--large" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I would like to discuss a powder coating requirement with Green Paints.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="enquiry_form"><?php chemventure_whatsapp_icon(); ?><span>WhatsApp</span></a>
+            </div>
             <p class="form-privacy">Your details are used only to respond to this enquiry.<?php if ( chemventure_privacy_policy_url() ) : ?> <a href="<?php echo esc_url( chemventure_privacy_policy_url() ); ?>">Read our Privacy Policy.</a><?php endif; ?></p>
             <p class="form-status" aria-live="polite" data-form-status></p>
             <noscript><p class="form-status is-error">JavaScript is required to submit this form online. Please use the contact details shown on this page.</p></noscript>

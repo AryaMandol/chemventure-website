@@ -28,7 +28,7 @@ $whatsapp = chemventure_whatsapp_number();
                 <a href="<?php echo esc_url( chemventure_phone_href( $phone ) ); ?>" data-cv-event="phone_click" data-cv-location="utility"><?php echo esc_html( $phone ); ?></a>
             <?php endif; ?>
             <?php if ( $whatsapp ) : ?>
-                <a href="<?php echo esc_url( chemventure_whatsapp_href( $whatsapp, 'Hi, I would like to know more about Green Paints powder coating solutions.' ) ); ?>" target="_blank" data-cv-event="whatsapp_click" data-cv-location="utility" rel="noopener">WhatsApp</a>
+                <a href="<?php echo esc_url( chemventure_whatsapp_href( $whatsapp, 'Hi, I would like to know more about Green Paints powder coating solutions.' ) ); ?>" target="_blank" data-cv-event="whatsapp_click" data-cv-location="utility" rel="noopener"><?php chemventure_whatsapp_icon(); ?><span>WhatsApp</span></a>
             <?php endif; ?>
         </div>
     </div>

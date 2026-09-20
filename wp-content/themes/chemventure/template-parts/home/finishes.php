@@ -12,7 +12,7 @@
                 <ul><li>Gloss level and visual appearance guidance</li><li>Surface texture and feel discussion</li><li>Application-based finish recommendation</li></ul>
                 <div class="finish-support-actions">
                     <a class="cv-button cv-button--primary" href="#enquiry">Discuss colour and finish options</a>
-                    <a class="cv-button cv-button--whatsapp" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I need help selecting a colour or finish for a Green Paints powder coating requirement.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="finishes">WhatsApp</a>
+                    <a class="cv-button cv-button--whatsapp" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I need help selecting a colour or finish for a Green Paints powder coating requirement.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="finishes"><?php chemventure_whatsapp_icon(); ?><span>WhatsApp</span></a>
                 </div>
             </div>
         </div>

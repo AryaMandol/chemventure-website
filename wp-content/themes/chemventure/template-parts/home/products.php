@@ -14,7 +14,7 @@
                 <h3>Pure Epoxy</h3>
                 <p>Strong chemical resistance and mechanical properties for suitable interior and functional coating requirements.</p>
                 <ul><li>Excellent chemical resistance</li><li>Strong mechanical properties</li><li>Matt finish listed in catalogue</li></ul>
-                <div class="product-card-actions"><a href="#enquiry" class="card-link" data-product-link="Pure Epoxy">Enquire about Pure Epoxy <span>→</span></a><a class="product-whatsapp" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I would like details and a quote for Green Paints Pure Epoxy powder coating.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="product_pure_epoxy">WhatsApp</a></div>
+                <div class="product-card-actions"><a href="#enquiry" class="card-link" data-product-link="Pure Epoxy">Enquire about Pure Epoxy <span>→</span></a><a class="product-whatsapp" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I would like details and a quote for Green Paints Pure Epoxy powder coating.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="product_pure_epoxy"><?php chemventure_whatsapp_icon( 'cv-whatsapp-icon--small' ); ?><span>WhatsApp</span></a></div>
             </article>
 
             <article class="product-card product-card-featured" data-reveal>
@@ -22,7 +22,7 @@
                 <h3>Epoxy Polyester Hybrid</h3>
                 <p>A tough, durable coating with resistance to corrosion and mechanical damage across a broad range of finish options.</p>
                 <ul><li>Glossy to matt options</li><li>Structured finish profiles</li><li>Corrosion resistance</li></ul>
-                <div class="product-card-actions"><a href="#enquiry" class="card-link" data-product-link="Epoxy Polyester Hybrid">Enquire about Hybrid <span>→</span></a><a class="product-whatsapp" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I would like details and a quote for Green Paints Epoxy Polyester Hybrid powder coating.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="product_hybrid">WhatsApp</a></div>
+                <div class="product-card-actions"><a href="#enquiry" class="card-link" data-product-link="Epoxy Polyester Hybrid">Enquire about Hybrid <span>→</span></a><a class="product-whatsapp" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I would like details and a quote for Green Paints Epoxy Polyester Hybrid powder coating.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="product_hybrid"><?php chemventure_whatsapp_icon( 'cv-whatsapp-icon--small' ); ?><span>WhatsApp</span></a></div>
             </article>
 
             <article class="product-card" data-reveal>
@@ -30,7 +30,7 @@
                 <h3>Pure Polyester</h3>
                 <p>Durable coating with good light and weather resistance, recommended in the supplied catalogue for exterior use.</p>
                 <ul><li>Good weather resistance</li><li>Good light resistance</li><li>Exterior-use positioning</li></ul>
-                <div class="product-card-actions"><a href="#enquiry" class="card-link" data-product-link="Pure Polyester">Enquire about Polyester <span>→</span></a><a class="product-whatsapp" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I would like details and a quote for Green Paints Pure Polyester powder coating.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="product_pure_polyester">WhatsApp</a></div>
+                <div class="product-card-actions"><a href="#enquiry" class="card-link" data-product-link="Pure Polyester">Enquire about Polyester <span>→</span></a><a class="product-whatsapp" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I would like details and a quote for Green Paints Pure Polyester powder coating.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="product_pure_polyester"><?php chemventure_whatsapp_icon( 'cv-whatsapp-icon--small' ); ?><span>WhatsApp</span></a></div>
             </article>
         </div>
 

@@ -27,10 +27,12 @@
         </nav>
 
         <div class="cv-footer-cta">
-            <p>Have a coating requirement?</p>
+            <p class="cv-footer-cta__eyebrow">Need help with a coating requirement?</p>
+            <h3>Talk to the Green Paints team.</h3>
+            <p class="cv-footer-cta__copy">Share your product, finish or application requirement and choose the channel that suits you.</p>
             <div class="cv-footer-cta__actions">
                 <a class="cv-button cv-button--outline" href="<?php echo esc_url( home_url( '/#enquiry' ) ); ?>">Get a Quote</a>
-                <a class="cv-button cv-button--whatsapp" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I would like to discuss a powder coating requirement with Green Paints.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="footer">WhatsApp</a>
+                <a class="cv-button cv-button--whatsapp" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I would like to discuss a powder coating requirement with Green Paints.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="footer"><?php chemventure_whatsapp_icon(); ?><span>WhatsApp</span></a>
             </div>
         </div>
     </div>

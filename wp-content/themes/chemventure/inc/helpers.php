@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Render the site logo with a bundled fallback for the initial setup.
+ * Render the site logo with a bundled fallback.
  */
 function chemventure_site_logo() {
     if ( has_custom_logo() ) {
@@ -27,9 +27,59 @@ function chemventure_site_logo() {
 }
 
 /**
+ * Fetch a theme modification with a default.
+ */
+function chemventure_mod( $setting, $default = '' ) {
+    $value = get_theme_mod( $setting, $default );
+    return is_string( $value ) ? trim( $value ) : $value;
+}
+
+/**
+ * Resolve a homepage image from Customizer or a supplied fallback URL.
+ */
+function chemventure_home_image( $setting, $fallback ) {
+    $value = chemventure_mod( $setting, '' );
+    return $value ? $value : $fallback;
+}
+
+/**
+ * Render a resource item as a real link when configured or a prototype button otherwise.
+ */
+function chemventure_resource_item( $setting, $label ) {
+    $url = chemventure_mod( $setting, '' );
+
+    if ( $url ) {
+        ?>
+        <a class="resource-item" href="<?php echo esc_url( $url ); ?>" target="_blank" rel="noopener" data-resource-link data-resource-name="<?php echo esc_attr( $label ); ?>">
+            <span><?php echo esc_html( $label ); ?></span><small>PDF</small>
+        </a>
+        <?php
+        return;
+    }
+    ?>
+    <button class="resource-item" type="button" data-resource>
+        <span><?php echo esc_html( $label ); ?></span><small>PDF</small>
+    </button>
+    <?php
+}
+
+/**
+ * Build a tel link from an arbitrary phone string.
+ */
+function chemventure_phone_href( $phone ) {
+    return 'tel:' . preg_replace( '/[^0-9+]/', '', (string) $phone );
+}
+
+/**
+ * Build a WhatsApp URL from an arbitrary number string.
+ */
+function chemventure_whatsapp_href( $number ) {
+    $digits = preg_replace( '/\D+/', '', (string) $number );
+    return $digits ? 'https://wa.me/' . $digits : home_url( '/#enquiry' );
+}
+
+/**
  * Fallback navigation used until menus are assigned in WordPress Admin.
- *
- * @param object|array $args WordPress menu arguments.
  */
 function chemventure_primary_menu_fallback( $args = array() ) {
     $menu_class = 'cv-nav__list';

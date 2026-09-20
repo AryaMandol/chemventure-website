@@ -4,6 +4,9 @@
  *
  * @package ChemVenture
  */
+
+$phone    = chemventure_mod( 'contact_phone', '' );
+$whatsapp = chemventure_mod( 'contact_whatsapp', '' );
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -19,6 +22,14 @@
 <div class="cv-utility-bar">
     <div class="cv-container cv-utility-bar__inner">
         <p><strong>Green Paints</strong><span>A powder coating brand of ChemVenture India Private Limited</span></p>
+        <div class="cv-utility-links">
+            <?php if ( $phone ) : ?>
+                <a href="<?php echo esc_url( chemventure_phone_href( $phone ) ); ?>" data-cv-event="phone_click" data-cv-location="utility"><?php echo esc_html( $phone ); ?></a>
+            <?php endif; ?>
+            <?php if ( $whatsapp ) : ?>
+                <a href="<?php echo esc_url( chemventure_whatsapp_href( $whatsapp ) ); ?>" target="_blank" data-cv-event="whatsapp_click" data-cv-location="utility" rel="noopener">WhatsApp</a>
+            <?php endif; ?>
+        </div>
     </div>
 </div>
 
@@ -43,6 +54,7 @@
         </nav>
 
         <div class="cv-header-actions">
+            <a class="cv-header-contact" href="<?php echo esc_url( home_url( '/#contact' ) ); ?>">Contact</a>
             <a class="cv-button cv-button--primary cv-button--small" href="<?php echo esc_url( home_url( '/#enquiry' ) ); ?>">Get a Quote</a>
             <button class="cv-menu-toggle" type="button" aria-expanded="false" aria-controls="cv-mobile-menu" data-cv-menu-toggle>
                 <span></span><span></span><span></span>

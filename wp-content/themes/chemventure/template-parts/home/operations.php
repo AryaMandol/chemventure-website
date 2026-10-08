@@ -10,7 +10,7 @@ $fallback = CHEMVENTURE_THEME_URI . '/assets/images/powder-spray-green.jpg';
         <div class="operations-copy" data-reveal>
             <p class="home-eyebrow home-eyebrow-dark">Operational Capability</p>
             <h2>From development to delivery.</h2>
-            <p>The supplied company material highlights laboratory development, production, inventory support and supply-chain monitoring as part of the operating model.</p>
+            <p>Our approach brings product development, production, inventory planning and supply coordination together to support customer requirements.</p>
             <div class="operations-list">
                 <article><span class="operations-mark"></span><div><h3>Development</h3><p>Product development and testing capability to support customer requirements.</p></div></article>
                 <article><span class="operations-mark"></span><div><h3>Production</h3><p>Dedicated production team focused on consistent product quality.</p></div></article>

@@ -85,6 +85,27 @@ function chemventure_submit_lead() {
         );
     }
 
+    $phone_digits = preg_replace( '/\D+/', '', $phone );
+    if ( strlen( $phone_digits ) < 7 || strlen( $phone_digits ) > 15 ) {
+        wp_send_json_error(
+            array( 'message' => __( 'Please enter a valid phone number with country code if needed.', 'chemventure' ) ),
+            422
+        );
+    }
+
+    // Server-side limits are required even when the browser has maxlength attributes.
+    $limits = array( 'name' => 120, 'company' => 160, 'phone' => 60, 'email' => 190, 'requirement' => 4000 );
+    foreach ( $limits as $field => $limit ) {
+        $value = (string) ${$field};
+        $length = function_exists( 'mb_strlen' ) ? mb_strlen( $value, 'UTF-8' ) : strlen( $value );
+        if ( $length > $limit ) {
+            wp_send_json_error(
+                array( 'message' => __( 'One or more fields are too long. Please shorten your response.', 'chemventure' ) ),
+                422
+            );
+        }
+    }
+
     if ( ! empty( $raw['email'] ) && ! is_email( $email ) ) {
         wp_send_json_error(
             array( 'message' => __( 'Please enter a valid email address.', 'chemventure' ) ),
@@ -408,6 +429,21 @@ function chemventure_lead_export_page() {
 }
 
 /**
+ * Prevent spreadsheet applications from evaluating visitor-provided CSV values as formulas.
+ * A leading apostrophe forces text interpretation in common spreadsheet programs.
+ *
+ * @param mixed $value A CSV cell value.
+ * @return string
+ */
+function chemventure_safe_csv_cell( $value ) {
+    $value = (string) $value;
+    if ( preg_match( '/^[\x00-\x20]*[=+\-@]/', $value ) ) {
+        return "'" . $value;
+    }
+    return $value;
+}
+
+/**
  * Stream stored leads as CSV.
  */
 function chemventure_export_leads() {
@@ -452,7 +488,7 @@ function chemventure_export_leads() {
 
         fputcsv(
             $output,
-            array(
+            array_map( 'chemventure_safe_csv_cell', array(
                 get_the_date( 'Y-m-d H:i:s', $lead ),
                 $get( 'status' ),
                 $get( 'name' ),
@@ -468,7 +504,7 @@ function chemventure_export_leads() {
                 $get( 'utm_term' ),
                 $get( 'landing_url' ),
                 $get( 'referrer' ),
-            ),
+            ) ),
             ',',
             '"',
             ''

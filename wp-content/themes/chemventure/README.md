@@ -74,3 +74,7 @@ The approved CV-01 design master remains the visual reference. Production change
 ## Legal policies
 
 Theme version 0.5.2 adds staging-approval fixes, a reliable Privacy Policy footer fallback, section-specific WhatsApp lead capture, and additional lightweight hardening. The WhatsApp number is managed from Appearance → Customize → ChemVenture Homepage → Contact Details.
+
+## CV-05F Visual Correction
+
+Theme 0.5.6 updates the B2B visual presentation without changing the lead-capture, tracking, contact configuration, policy or footer logic. The image/text equal-height desktop behaviour is retained. See the project `docs/CV-05F-VISUAL-CORRECTION.md`.

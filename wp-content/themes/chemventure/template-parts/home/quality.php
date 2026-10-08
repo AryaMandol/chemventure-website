@@ -14,7 +14,7 @@ $fallback = CHEMVENTURE_THEME_URI . '/assets/images/powder-spray-yellow.png';
         <div class="content-block" data-reveal>
             <p class="home-eyebrow home-eyebrow-dark">Quality &amp; Testing</p>
             <h2>Tested for consistency before customer use.</h2>
-            <p class="lead">ChemVenture's supplied catalogue lists in-house testing for key coating properties, with additional special testing available when required by customers.</p>
+            <p class="lead">In-house testing covers key coating properties including impact resistance, gloss, film thickness and flexibility. Additional tests may be discussed for specific requirements.</p>
             <div class="test-list">
                 <div><span>Impact Resistance</span><small>Mechanical performance check</small></div>
                 <div><span>Gloss Measurement</span><small>Finish consistency check</small></div>

@@ -16,12 +16,12 @@ $fallback = CHEMVENTURE_THEME_URI . '/assets/images/powder-spray-green.jpg';
             <p class="home-eyebrow home-eyebrow-dark">About Green Paints</p>
             <h2><?php echo esc_html( chemventure_mod( 'about_title', 'Powder coating expertise backed by ChemVenture.' ) ); ?></h2>
             <p class="lead"><?php echo esc_html( chemventure_mod( 'about_lead', 'ChemVenture India Private Limited was founded in 2010 and later expanded into chemical intermediates and powder paints for the coatings industry. Green Paints is the company\'s powder coating range.' ) ); ?></p>
-            <p><?php echo esc_html( chemventure_mod( 'about_body', 'The business focuses on product development, consistent quality, operational efficiency and customer value. Its supplied company profile also records customers ranging from job coaters to OEMs.' ) ); ?></p>
+            <p><?php echo esc_html( chemventure_mod( 'about_body', 'The business focuses on product development, consistent quality, operational efficiency and customer value. The company serves customer requirements ranging from job coaters to OEMs.' ) ); ?></p>
 
-            <div class="about-strengths">
-                <article><h3>Development &amp; Laboratory</h3><p>Products are developed and tested before moving to the customer's facility.</p></article>
-                <article><h3>Production</h3><p>A dedicated production team supports consistent product quality.</p></article>
-                <article><h3>Supply Support</h3><p>Inventory and supply-chain processes are focused on timely customer fulfilment.</p></article>
+            <div class="about-strengths" aria-label="ChemVenture capabilities">
+                <div class="about-strength"><h3>Development &amp; Laboratory</h3><p>Products are developed and tested before moving to the customer's facility.</p></div>
+                <div class="about-strength"><h3>Production</h3><p>A dedicated production team supports consistent product quality.</p></div>
+                <div class="about-strength"><h3>Supply Support</h3><p>Inventory and supply-chain processes are focused on timely customer fulfilment.</p></div>
             </div>
         </div>
     </div>

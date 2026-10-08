@@ -5,8 +5,7 @@
  * @package ChemVenture
  */
 
-$phone    = chemventure_mod( 'contact_phone', '' );
-$whatsapp = chemventure_whatsapp_number();
+$phone = chemventure_mod( 'contact_phone', '' );
 ?><!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
@@ -27,9 +26,7 @@ $whatsapp = chemventure_whatsapp_number();
             <?php if ( $phone ) : ?>
                 <a href="<?php echo esc_url( chemventure_phone_href( $phone ) ); ?>" data-cv-event="phone_click" data-cv-location="utility"><?php echo esc_html( $phone ); ?></a>
             <?php endif; ?>
-            <?php if ( $whatsapp ) : ?>
-                <a href="<?php echo esc_url( chemventure_whatsapp_href( $whatsapp, 'Hi, I would like to know more about Green Paints powder coating solutions.' ) ); ?>" target="_blank" data-cv-event="whatsapp_click" data-cv-location="utility" rel="noopener">WhatsApp</a>
-            <?php endif; ?>
+
         </div>
     </div>
 </div>
@@ -55,8 +52,7 @@ $whatsapp = chemventure_whatsapp_number();
         </nav>
 
         <div class="cv-header-actions">
-            <a class="cv-header-contact" href="<?php echo esc_url( home_url( '/#contact' ) ); ?>">Contact</a>
-            <a class="cv-button cv-button--whatsapp cv-button--small cv-header-whatsapp" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I would like to discuss a Green Paints powder coating requirement.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="header">WhatsApp</a>
+            <a class="cv-button cv-button--whatsapp cv-button--small cv-header-whatsapp" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I would like to discuss a Green Paints powder coating requirement.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="header"><?php chemventure_whatsapp_icon(); ?><span>WhatsApp</span></a>
             <a class="cv-button cv-button--primary cv-button--small" href="<?php echo esc_url( home_url( '/#enquiry' ) ); ?>">Get a Quote</a>
             <button class="cv-menu-toggle" type="button" aria-expanded="false" aria-controls="cv-mobile-menu" data-cv-menu-toggle>
                 <span></span><span></span><span></span>
@@ -82,7 +78,7 @@ $whatsapp = chemventure_whatsapp_number();
             </nav>
             <div class="cv-mobile-menu__actions">
                 <a class="cv-button cv-button--primary" href="<?php echo esc_url( home_url( '/#enquiry' ) ); ?>">Get a Quote</a>
-                <a class="cv-button cv-button--whatsapp" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I would like to discuss a Green Paints powder coating requirement.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="mobile_menu">WhatsApp</a>
+                <a class="cv-button cv-button--whatsapp" href="<?php echo esc_url( chemventure_whatsapp_href( '', 'Hi, I would like to discuss a Green Paints powder coating requirement.' ) ); ?>" target="_blank" rel="noopener" data-cv-event="whatsapp_click" data-cv-location="mobile_menu"><?php chemventure_whatsapp_icon(); ?><span>WhatsApp</span></a>
             </div>
         </div>
     </div>

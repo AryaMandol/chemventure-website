@@ -6,7 +6,6 @@
   const form = document.querySelector('[data-lead-form]');
   const formStatus = document.querySelector('[data-form-status]');
   const productSelect = document.querySelector('[data-product-select]');
-  const resourceStatus = document.querySelector('[data-resource-status]');
   const submitButton = document.querySelector('[data-submit-button]');
   const consentRoot = document.querySelector('[data-cookie-consent]');
   const consentPanel = document.querySelector('[data-cookie-panel]');
@@ -83,9 +82,21 @@
 
   const applyConsent = (status, persist = true) => {
     if (persist) saveConsent(status);
-    track('consent_update', { analytics_consent: status === 'analytics' ? 'granted' : 'denied' });
-    if (status === 'analytics') loadGtm();
+
+    if (status === 'analytics') {
+      // Events from before consent must not be sent retroactively when GTM starts.
+      if (!gtmLoaded) window.dataLayer.length = 0;
+      track('consent_update', { analytics_consent: 'granted' });
+      loadGtm();
+      hideConsent();
+      return;
+    }
+
+    track('consent_update', { analytics_consent: 'denied' });
     hideConsent();
+    // GTM scripts already running cannot be unloaded reliably. Reload with the
+    // newly saved Necessary-only choice so no optional measurement loads again.
+    if (gtmLoaded) window.location.reload();
   };
 
   if (config.trackingEnabled) {
@@ -99,6 +110,20 @@
     consentAccept?.addEventListener('click', () => applyConsent('analytics'));
     consentReject?.addEventListener('click', () => applyConsent('necessary'));
     consentSettings.forEach((button) => button.addEventListener('click', () => showConsent(button)));
+    document.addEventListener('keydown', (event) => {
+      if (!consentRoot || consentRoot.hidden || event.key !== 'Tab') return;
+      const controls = [...consentPanel.querySelectorAll('button:not([disabled]), a[href]')];
+      if (!controls.length) return;
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      if (event.shiftKey && (document.activeElement === first || document.activeElement === consentPanel)) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
   }
 
   const updateHeader = () => {
@@ -206,11 +231,14 @@
     });
   });
 
-  document.querySelectorAll('[data-resource]').forEach((button) => {
-    button.addEventListener('click', () => {
-      if (resourceStatus) {
-        resourceStatus.textContent = 'This resource is not linked yet. Add the approved PDF URL in Appearance → Customize → ChemVenture Homepage → Technical Resources.';
+  document.querySelectorAll('[data-resource-request]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const resource = link.dataset.resourceRequest || 'technical information';
+      const requirement = form?.querySelector('[name="requirement"]');
+      if (requirement && !requirement.value.trim()) {
+        requirement.value = `Please share information about ${resource} for my powder coating requirement.`;
       }
+      track('resource_enquiry_click', { resource_name: resource });
     });
   });
 
